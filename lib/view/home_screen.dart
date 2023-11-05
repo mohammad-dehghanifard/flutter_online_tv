@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_online_tv/controller/channel_controller.dart';
 import 'package:flutter_online_tv/resources/app_colors.dart';
 import 'package:flutter_online_tv/resources/dimens.dart';
 import 'package:flutter_online_tv/resources/text_style.dart';
+import 'package:get/get.dart';
 import '../widgets/tv_channel_item.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,6 +11,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ChannelController channelController = Get.put(ChannelController());
     return Scaffold(
       body: SafeArea(
         child: SizedBox(
@@ -47,22 +50,25 @@ class HomeScreen extends StatelessWidget {
                       ),
                       color: AppColors.gray
                     ),
-                    child: GridView.builder(
-                      itemCount: 20,
-                      padding: const EdgeInsets.all(20),
+                    child: Obx(
+                      () =>  GridView.builder(
+                        itemCount: channelController.channels.length,
+                        padding: const EdgeInsets.all(20),
                         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                          mainAxisSpacing: 10,
-                          crossAxisSpacing: 10,
-                          mainAxisExtent: 150
+                            crossAxisCount: 3,
+                            mainAxisSpacing: 10,
+                            crossAxisSpacing: 10,
+                            mainAxisExtent: 150
                         ),
                         itemBuilder: (context, index) {
+                          final channel = channelController.channels[index];
                           return TvChannelItem(
                             onTap: () {},
-                            channelName: 'شبکه 3',
-                            imageUrl:"https://dl.hitaldev.com/tv/3.png",
+                            channelName: channel.channelName,
+                            imageUrl: channel.logo,
                           );
                         },),
+                    )
                   )
               )
             ],

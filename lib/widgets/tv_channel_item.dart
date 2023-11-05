@@ -24,7 +24,7 @@ class TvChannelItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
               color: AppColors.scaffoldBg,
             ),
-            child: Image.network(imageUrl),
+            child: Image.network(imageUrl,width: 65,),
           ),
           const SizedBox(height: Dimens.medium),
           // text
