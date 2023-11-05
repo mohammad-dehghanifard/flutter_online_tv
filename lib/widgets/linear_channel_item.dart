@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_online_tv/resources/text_style.dart';
 import '../models/channel_model.dart';
 import '../resources/app_colors.dart';
 import '../resources/dimens.dart';
@@ -33,14 +34,16 @@ class LinearChannelItem extends StatelessWidget {
         decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: AppGradiant.yellowGradiant,
+              begin: Alignment.centerRight,
+              end: Alignment.centerLeft
             ),
             borderRadius: BorderRadius.circular(16)
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            Text(channel.channelName,style: AppTextStyle.titleMedium),
             Image.network(channel.logo,width: 30),
-            Text(channel.channelName),
           ],
         ),
       ),
