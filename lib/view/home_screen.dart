@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_online_tv/resources/app_colors.dart';
 import 'package:flutter_online_tv/resources/dimens.dart';
 
+import '../widgets/tv_channel_item.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -54,21 +56,10 @@ class HomeScreen extends StatelessWidget {
                           mainAxisExtent: 150
                         ),
                         itemBuilder: (context, index) {
-                          return Column(
-                            children: [
-                              // logo
-                              Container(
-                                padding: const EdgeInsets.all(Dimens.large),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
-                                  color: AppColors.scaffoldBg,
-                                ),
-                                child: Image.network("https://dl.hitaldev.com/tv/3.png"),
-                              ),
-                              const SizedBox(height: 5),
-                              // text
-                              const Text("شبکه 3")
-                            ],
+                          return TvChannelItem(
+                            onTap: () {},
+                            channelName: 'شبکه 3',
+                            imageUrl:"https://dl.hitaldev.com/tv/3.png",
                           );
                         },),
                   )
@@ -80,3 +71,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
