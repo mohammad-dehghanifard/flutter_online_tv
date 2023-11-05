@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_online_tv/resources/app_colors.dart';
 import 'package:flutter_online_tv/resources/dimens.dart';
-
+import 'package:flutter_online_tv/resources/text_style.dart';
 import '../widgets/tv_channel_item.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               //logo
-              Image.asset("assets/images/logo.png",scale: 3),
+              Image.asset("assets/images/logo.png",scale: 5),
               // banner
               Padding(
                 padding:  const EdgeInsets.all(Dimens.medium),
@@ -29,11 +29,12 @@ class HomeScreen extends StatelessWidget {
               Container(
                 width: 200,
                 height: 40,
+                margin: const EdgeInsets.symmetric(vertical: Dimens.small - 4),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   color: AppColors.lightBlue
                 ),
-                child: const Center(child: Text("لیست شبکه های تلوزیون")),
+                child:  Center(child: Text("لیست شبکه های تلوزیون",style:AppTextStyle.titleMedium)),
               ),
               // TV channel list
               Expanded(

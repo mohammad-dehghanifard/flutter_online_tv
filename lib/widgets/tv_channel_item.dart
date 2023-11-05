@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_online_tv/resources/text_style.dart';
 import '../resources/app_colors.dart';
 import '../resources/dimens.dart';
 
@@ -25,9 +26,9 @@ class TvChannelItem extends StatelessWidget {
             ),
             child: Image.network(imageUrl),
           ),
-          const SizedBox(height: 5),
+          const SizedBox(height: Dimens.medium),
           // text
-          Text(channelName)
+          Text(channelName,style: AppTextStyle.subTitle)
         ],
       ),
     );
