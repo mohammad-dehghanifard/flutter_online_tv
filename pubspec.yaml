@@ -38,6 +38,8 @@ dependencies:
   google_fonts: ^6.1.0
   dio: ^5.3.3
   get: ^4.6.6
+  video_player: ^2.8.1
+  chewie: ^1.7.0
 
 dev_dependencies:
   flutter_test:
