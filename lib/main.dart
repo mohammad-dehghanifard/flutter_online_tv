@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_online_tv/resources/app_colors.dart';
+import 'package:flutter_online_tv/view/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,9 +15,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Online Tv',
       theme: ThemeData(
+        scaffoldBackgroundColor: AppColors.scaffoldBg,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      home: const HomeScreen(),
     );
   }
 }
